@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RecyclerViewKotlin</string>
+    <string name="home">Home</string>
+    <string name="welcome_message">Welcome Home !!</string>
+    <string name="places_list">Places List</string>
+    <string name="place_details">Place details</string>
+    <string name="movies_list">Movies List</string>
+</resources>
