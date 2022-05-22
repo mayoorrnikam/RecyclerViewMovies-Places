@@ -3,6 +3,7 @@ package com.example.recyclerviewkotlin
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.recyclerviewkotlin.databinding.ActivityPlaceDetailsBinding
+import com.example.recyclerviewkotlin.models.PlaceModel
 
 class PlaceDetailsActivity : AppCompatActivity() {
 
@@ -10,7 +11,6 @@ class PlaceDetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_place_details)
 
         val actionBar = supportActionBar
         actionBar!!.title = getString(R.string.place_details)
@@ -23,14 +23,19 @@ class PlaceDetailsActivity : AppCompatActivity() {
     }
 
     private fun getIntentContent(){
-        val placeTitle = intent?.getStringExtra("placeTitle")
-        val placeText = intent?.getStringExtra("placeText")
-
-        setContent(placeTitle, placeText)
+        val placeListPosition = intent?.getStringExtra("placeListPosition")
+        val placeModelBySerializableExtra = intent?.getSerializableExtra("PlaceModel") as PlaceModel
+        val placeModel = intent?.extras?.getSerializable("PlaceModel") as PlaceModel
+        setContent(placeModelBySerializableExtra, placeModel, placeListPosition)
     }
 
-    private fun setContent(placeTitle: String?, placeText: String?) {
-        binding.placeDetailsTitle.text = placeTitle
-        binding.placeDetailsText.text = placeText
+    private fun setContent(
+        placeModel: PlaceModel?,
+        placeModelBySerializableExtra : PlaceModel?,
+        placeListPosition : String?
+    ) {
+        binding.placeDetailsTitle.text = placeModelBySerializableExtra?.placeTitle
+        binding.placeDetailsText.text = placeModel?.placeText
+        binding.placeListPositionText.text = "Place List Position: $placeListPosition"
     }
 }

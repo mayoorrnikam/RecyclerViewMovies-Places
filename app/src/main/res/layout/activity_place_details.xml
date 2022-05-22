@@ -52,4 +52,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/place_details_title" />
+
+    <TextView
+        android:id="@+id/place_list_position_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/layout_margin_20dp"
+        android:layout_marginEnd="@dimen/layout_margin_20dp"
+        android:padding="@dimen/layout_margin_12dp"
+        android:text="@string/home"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_20sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/place_details_text" />
 </androidx.constraintlayout.widget.ConstraintLayout>
